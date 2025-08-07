@@ -1,4 +1,4 @@
-Explain the bias-variance tradeoff in the context of predictive modeling. How would you approach optimizing a model that is overfitting versus one that is underfitting?
+   Explain the bias-variance tradeoff in the context of predictive modeling. How would you approach optimizing a model that is overfitting versus one that is underfitting?
 
 ------------
 
@@ -11,7 +11,7 @@ The **bias-variance tradeoff** is a fundamental concept in predictive modeling t
    - High-bias models make strong assumptions about the data (e.g., assuming a linear relationship when the true relationship is nonlinear).
    - Symptoms: Poor performance on both training and test data (high training error and high test error).
 
-2. **Variance**:
+2. **Variance**:      
    - Variance refers to errors introduced by overly complex models that are too sensitive to the specific training data, capturing noise along with the signal (overfitting).
    - High-variance models perform well on training data but poorly on unseen test data (low training error but high test error).
 
@@ -84,3 +84,5 @@ Suppose you're building a model to predict house prices:
 ------------
 ------------
 ------------
+
+
