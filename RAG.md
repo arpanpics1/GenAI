@@ -11,6 +11,17 @@ Retrieval-Augmented Generation (RAG) systems combine information retrieval and l
      - A lower threshold (e.g., 0.5) retrieves more documents, increasing recall but risking inclusion of less relevant content.
      - Example: In a RAG system using a vector database, setting a threshold of 0.75 means only documents with a cosine similarity score above 0.75 are passed to the generator.
    - **Typical Range**: 0.0 to 1.0 (depends on the similarity metric, e.g., cosine similarity).
+  
+``` What's "Recall"?
+Recall means: "Did I find all the relevant stuff?"
+Example:
+
+Imagine there are 10 truly relevant documents
+You found 8 of them
+Recall = 8/10 = 80%
+
+Higher recall = You didn't miss much
+```
 
 2. **Max Sources**
    - **Description**: Specifies the maximum number of documents or chunks retrieved from the knowledge base to be used as context for generation.
@@ -58,7 +69,7 @@ Retrieval-Augmented Generation (RAG) systems combine information retrieval and l
      - Example: In a RAG system, setting `Top K = 40` allows the model to consider the 40 most likely tokens, balancing coherence and variety.
    - **Typical Range**: 1 to 100 (or higher, depending on the model).
 
-Top-k says:
+```Top-k says:
 
 "Give me exactly the top 50 words, no matter what"
 Fixed number ✂️
@@ -125,7 +136,7 @@ For RAG systems, you'll mostly see:
 ✅ Top-p = 0.9 (standard)
 ✅ Temperature = 0.1-0.7 (depending on use case)
 ❌ Top-k (often not used or left at default)
-
+```
 
 ---
 
