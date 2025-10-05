@@ -45,10 +45,10 @@ Retrieval-Augmented Generation (RAG) systems combine information retrieval and l
    - **Typical Range**: 0.0 to 1.0.
   
 - What the Number Means
-top-p = 1.0 → Consider ALL words (even weird ones)
-top-p = 0.9 → Consider only the top 90% most likely words (recommended)
-top-p = 0.5 → Only the top 50% most likely words (very focused)
-top-p = 0.1 → Only the most likely words (very strict)
+top-p = 1.0 → Consider ALL words (even weird ones).
+top-p = 0.9 → Consider only the top 90% most likely words (recommended).
+top-p = 0.5 → Only the top 50% most likely words (very focused).
+top-p = 0.1 → Only the most likely words (very strict).
 
 6. **Top K (K-Sampling)**
    - **Description**: Limits sampling to the top `k` most probable tokens at each generation step.
