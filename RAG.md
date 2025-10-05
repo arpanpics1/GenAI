@@ -58,6 +58,75 @@ Retrieval-Augmented Generation (RAG) systems combine information retrieval and l
      - Example: In a RAG system, setting `Top K = 40` allows the model to consider the 40 most likely tokens, balancing coherence and variety.
    - **Typical Range**: 1 to 100 (or higher, depending on the model).
 
+Top-k says:
+
+"Give me exactly the top 50 words, no matter what"
+Fixed number ✂️
+
+Top-p says:
+
+"Give me however many words it takes to reach 90% probability"
+Flexible number 📊
+
+When They Give the Same Result
+Often, they end up doing nearly the same thing!
+Example:
+
+Top-k = 50
+Top-p = 0.9
+
+In many cases, the top 50 words ≈ 90% of probability anyway, so you get almost identical results.
+When They Act Differently
+Case 1: One word is super obvious
+"The capital of France is ___"
+
+"Paris" → 98%
+"Lyon" → 1%
+"Marseille" → 0.5%
+
+Top-k = 50: Considers 50 words (including nonsense)
+Top-p = 0.9: Considers only 1 word (Paris)
+→ Top-p is smarter here ✓
+
+Case 2: Many words are equally likely
+"I feel ___" (many emotions possible)
+
+"happy" → 8%
+"sad" → 7%
+"tired" → 7%
+"excited" → 6%
+... (20+ reasonable options)
+
+Top-k = 10: Only considers 10 words
+Top-p = 0.9: Needs like 15-20 words to hit 90%
+→ Top-k might cut off too early ✗
+Which One Should You Use?
+Modern recommendation: Top-p
+
+It's "smarter" - adapts to the situation
+Most AI systems default to top-p now
+More flexible and generally better results
+
+Top-k is fine when:
+
+You want simple, predictable behavior
+You're doing very controlled generation
+Your system doesn't support top-p
+
+Can You Use Both Together?
+Yes! They work as a double-filter:
+1. First: Apply top-k (keep top 50 words)
+2. Then: Apply top-p (from those 50, keep top 90%)
+3. Finally: Apply temperature (adjust randomness)
+But honestly, most people just use top-p + temperature and skip top-k.
+The Practical Truth
+For RAG systems, you'll mostly see:
+
+✅ Top-p = 0.9 (standard)
+✅ Temperature = 0.1-0.7 (depending on use case)
+❌ Top-k (often not used or left at default)
+
+
 ---
 
 ### Additional Common RAG Parameters
