@@ -2,7 +2,7 @@ Retrieval-Augmented Generation (RAG) systems combine information retrieval and l
 
 ---
 
-### Parameters You Mentioned
+
 
 1. **Similarity Search Threshold**
    - **Description**: This parameter defines the minimum similarity score required for a document or chunk to be considered relevant during the retrieval phase. It’s typically used in vector-based similarity searches (e.g., cosine similarity) to filter out irrelevant documents.
